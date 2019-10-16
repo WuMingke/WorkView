@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <declare-styleable name="WorkView">
+        <attr name="lineColor" format="color" />
+        <attr name="lineWidth" format="float" />
+        <attr name="imaginaryColor" format="color" />
+        <attr name="imaginaryWidth" format="float" />
+        <attr name="greenbeltColor" format="color" />
+        <attr name="interval" format="float" />
+
+    </declare-styleable>
+
+</resources>
