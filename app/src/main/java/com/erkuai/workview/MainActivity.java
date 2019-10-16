@@ -13,48 +13,28 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private WorkView workView;
-
-    private TextView distance;
-
-    private boolean hasTurned;
+    private WorkView2 workView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        workView = (WorkView) findViewById(R.id.workView);
-        distance = (TextView) findViewById(R.id.distance);
-
+        workView = (WorkView2) findViewById(R.id.workView);
 
     }
 
-    public void start_move(View view) {
+    public void left(View view) {
+     //   if (workView.getCarX() > workView.getBitmapCar().getWidth() / 2) {
+            workView.setCarX(workView.getCarX() - 10);
+     //   }
+    }
 
-        workView.setCarY(workView.getCarY() - 20);
-
-
-        //测试数据，先往左移动，再往右
-        if (workView.getCarX() >= 300) {
-
-            if (!hasTurned) {
-                workView.setCarX(workView.getCarX() - 10);
-            } else {
-                workView.setCarX(workView.getCarX() + 10);
-            }
-
-            if ((workView.getCarX() == (workView.getWidth() / 2)) && hasTurned) {
-                hasTurned = false;
-            }
-        }
-
-        if (workView.getCarX() < 300) {
+    public void right(View view) {
+      //  if (workView.getCarX() < workView.getWidth() - workView.getBitmapCar().getWidth() / 2) {
             workView.setCarX(workView.getCarX() + 10);
-            hasTurned = true;
-        }
-
-        distance.setText(getString(R.string.instance) + Math.abs(workView.getCarX() - workView.getWidth() / 2));
-
+       // }
     }
+
+
 }

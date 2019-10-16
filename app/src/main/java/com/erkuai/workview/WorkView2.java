@@ -8,7 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
-import android.graphics.PathDashPathEffect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -17,7 +16,7 @@ import android.view.View;
  * Created by Administrator on 2019/10/16.
  */
 
-public class WorkView extends View {
+public class WorkView2 extends View {
 
     //直线
     private Paint linePaint;
@@ -58,15 +57,15 @@ public class WorkView extends View {
     private int greenbeltColor;
 
 
-    public WorkView(Context context) {
+    public WorkView2(Context context) {
         this(context, null);
     }
 
-    public WorkView(Context context, @Nullable AttributeSet attrs) {
+    public WorkView2(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public WorkView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public WorkView2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.WorkView);
@@ -125,18 +124,18 @@ public class WorkView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawLine(startX, startY, endX, endY, linePaint);
+     //   canvas.drawLine(startX, startY, endX, endY, linePaint);
         //左边
-        canvas.drawLine(startX - interval, startY, endX - interval, endY, imaginaryPaint);
+      //  canvas.drawLine(startX - interval, startY, endX - interval, endY, imaginaryPaint);
         //右边
-        canvas.drawLine(startX + interval, startY, endX + interval, endY, imaginaryPaint);
+      //  canvas.drawLine(startX + interval, startY, endX + interval, endY, imaginaryPaint);
 
-        canvas.drawBitmap(bitmapA, aX - bitmapA.getWidth() / 2, aY - bitmapA.getHeight() / 2, linePaint);
-        canvas.drawBitmap(bitmapB, bX - bitmapB.getWidth() / 2, bY - bitmapB.getHeight() / 2, linePaint);
+      //  canvas.drawBitmap(bitmapA, aX - bitmapA.getWidth() / 2, aY - bitmapA.getHeight() / 2, linePaint);
+      //  canvas.drawBitmap(bitmapB, bX - bitmapB.getWidth() / 2, bY - bitmapB.getHeight() / 2, linePaint);
         canvas.drawBitmap(bitmapCar, carX - bitmapCar.getWidth() / 2, carY - bitmapCar.getHeight() / 2, linePaint);
 
         //绿色区域
-        canvas.drawRect(startX - interval, carY + bitmapCar.getHeight() / 2, startX + interval, startY, greenbeltPaint);
+       // canvas.drawRect(startX - interval, carY + bitmapCar.getHeight() / 2, startX + interval, startY, greenbeltPaint);
     }
 
 
@@ -170,5 +169,9 @@ public class WorkView extends View {
 
     public float getCarY() {
         return carY;
+    }
+
+    public Bitmap getBitmapCar() {
+        return bitmapCar;
     }
 }
